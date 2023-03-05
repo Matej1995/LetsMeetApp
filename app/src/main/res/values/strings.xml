@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">LetsMeet</string>
+    <string name="bottomBar_weather">Weather</string>
+    <string name="bottomBar_setting">Setting</string>
+    <string name="settings_windTitle">Wind</string>
+    <string name="setting_tempTitle">Temp</string>
+    <string name="settingsTab_tempCelsius">Celsius</string>
+    <string name="settingsTab_tempFahrenheit">Fahrenheit</string>
+    <string name="settingsTab_windKilometers">Km/h</string>
+    <string name="settingsTab_windMeters">M/s</string>
+    <string name="networkConnection_error">Not connected to the internet data may not be up to date</string>
+    <string name="networkConnection_available">Internet connection is available pull to update date</string>
+    <string name="dialog_grantPermission">Grant permission</string>
+    <string name="general_ok">OK</string>
+    <string name="dialog_requirePermission">Permission required</string>
+    <string name="tempUnit_celsius">%s°C</string>
+    <string name="tempUnit_fahrenheit">%s°F</string>
+    <string name="gps_error">Couldnt retrive location. Make sure to grant permission and enable GPS.</string>
+    <string name="forecast_dayWithHour">Today %s</string>
+    <string name="hourly_title">Today</string>
+    <string name="pressure_unit"> hpa</string>
+    <string name="humidity_unit"> %</string>
+    <string name="wind_unit_km">km/h</string>
+    <string name="wind_unit_m">m/s</string>
+
+</resources>

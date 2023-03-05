@@ -1,0 +1,19 @@
+syntax = "proto3";
+option java_package = "cz.sandera.letsmeet.data.dataStore";
+option java_multiple_files = true;
+
+message WeatherPreferences {
+
+  TemperatureUnit temp_unit = 1;
+  WindUnit wind_unit = 2;
+
+  enum TemperatureUnit {
+    Celsius = 0;
+    Fahrenheit = 1;
+  }
+
+  enum  WindUnit {
+    Kilometers = 0;
+    Meters = 1;
+  }
+}
