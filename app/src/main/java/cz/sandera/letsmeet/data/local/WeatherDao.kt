@@ -33,5 +33,5 @@ interface WeatherDao {
 
     @Transaction
     @Query("SELECT * FROM currentWeatherDataEntity")
-    fun getCurrentWeatherWithHourlyForecast(): CurrentWeatherWithHourlyForecast
+    fun getCurrentWeatherWithHourlyForecast(): CurrentWeatherWithHourlyForecast?
 }

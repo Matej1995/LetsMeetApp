@@ -1,16 +1,13 @@
 package cz.sandera.letsmeet.data.repository
 
 import cz.sandera.letsmeet.data.local.WeatherDao
-import cz.sandera.letsmeet.data.local.entity.HourlyWeatherDataEntity
 import cz.sandera.letsmeet.data.mappers.toCurrentWeatherEntity
 import cz.sandera.letsmeet.data.mappers.toHourlyWeatherEntity
 import cz.sandera.letsmeet.data.mappers.toWeatherData
 import cz.sandera.letsmeet.data.mappers.toWeatherInfo
 import cz.sandera.letsmeet.data.remote.WeatherApi
-import cz.sandera.letsmeet.data.remote.dto.WeatherDto
 import cz.sandera.letsmeet.domain.repository.WeatherRepository
 import cz.sandera.letsmeet.domain.util.Resource
-import cz.sandera.letsmeet.domain.weather.WeatherData
 import cz.sandera.letsmeet.domain.weather.WeatherInfo
 import javax.inject.Inject
 
@@ -44,7 +41,7 @@ class WeatherRepositoryImpl @Inject constructor(
     }
 
     override suspend fun loadAllDataFromDatabase(): WeatherInfo? {
-        val result = weatherDao.getCurrentWeatherWithHourlyForecast()
+        val result = weatherDao.getCurrentWeatherWithHourlyForecast() ?: return null
         val weatherData = result.hourlyWeather.toWeatherData()
 
         return WeatherInfo(

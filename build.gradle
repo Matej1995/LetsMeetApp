@@ -4,10 +4,25 @@ buildscript {
         ext.retrofit_vesrion = "2.9.0"
         ext.okhttp_version = "4.10.0"
         ext.room_version = "2.5.0"
+        ext.hilt_version = "2.45"
+        ext.data_store_version = "1.0.0"
+        ext.protobuf_version = "3.18.0"
+        ext.splash_screen_version = "1.0.0"
+        compose_navigation_version = "1.8.33-beta"
+        compose_navigation_hilt = "1.0.0"
+        ext.coroutine_version = "1.6.4"
+        ext.google_service_location_version = "21.0.1"
+        ext.androidx_core_version = "1.9.0"
+        ext.androidx_lifecycle_version = "2.5.1"
+        ext.test_unit_version = "4.13.2"
+        ext.test_androidx_unit_version = "1.1.5"
+        compose_material_version = "1.3.1"
+        compose_activity_version = "1.6.1"
+        ext.test_espresso_version = "3.5.1"
     }
 
     dependencies {
-        classpath "com.google.dagger:hilt-android-gradle-plugin:2.45"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

@@ -15,15 +15,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import androidx.core.app.ActivityCompat.shouldShowRequestPermissionRationale
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
-import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import cz.sandera.letsmeet.R
 import cz.sandera.letsmeet.presentation.components.PermissionDialog
-import cz.sandera.letsmeet.presentation.destinations.SettingScreenDestination
 import cz.sandera.letsmeet.presentation.util.LocationPermissionTextProvider
 import cz.sandera.letsmeet.presentation.util.UiEvent
 import cz.sandera.letsmeet.presentation.util.openAppSettings
@@ -32,14 +31,12 @@ import cz.sandera.letsmeet.presentation.weather.components.WeatherForecast
 import cz.sandera.letsmeet.ui.theme.DarkBlue
 import cz.sandera.letsmeet.ui.theme.DeepBlue
 import cz.sandera.letsmeet.ui.theme.spacing
-import kotlinx.coroutines.flow.collect
 
 @RootNavGraph(start = true)
 @Destination
 @Composable
 fun WeatherScreen(
     scaffoldState: ScaffoldState,
-    navigator: DestinationsNavigator,
     modifier: Modifier = Modifier,
     viewModel: WeatherViewModel = hiltViewModel(),
 ) {
@@ -118,12 +115,21 @@ fun WeatherScreen(
             )
         }
         viewModel.state.error?.let { error ->
-            Text(
-                text = error,
-                color = Color.Red,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.align(Alignment.Center)
-            )
+            Column(
+                modifier = Modifier.align(Alignment.Center),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = error,
+                    color = Color.Red,
+                    textAlign = TextAlign.Center,
+                )
+                Button(
+                    onClick = { viewModel.loadWeatherInfo() }) {
+                    Text(text = stringResource(id = R.string.weather_refreshButton))
+                }
+            }
         }
     }
 

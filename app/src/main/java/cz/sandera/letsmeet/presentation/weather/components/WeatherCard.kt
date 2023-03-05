@@ -28,7 +28,6 @@ import cz.sandera.letsmeet.presentation.util.format
 import cz.sandera.letsmeet.presentation.weather.WeatherState
 import cz.sandera.letsmeet.presentation.weather.WeatherViewModel
 import cz.sandera.letsmeet.ui.theme.spacing
-import kotlinx.serialization.StringFormat
 import java.time.format.DateTimeFormatter
 import kotlin.math.roundToInt
 

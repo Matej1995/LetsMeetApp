@@ -22,5 +22,6 @@
     <string name="humidity_unit"> %</string>
     <string name="wind_unit_km">km/h</string>
     <string name="wind_unit_m">m/s</string>
+    <string name="weather_refreshButton">Load weather data.</string>
 
 </resources>
